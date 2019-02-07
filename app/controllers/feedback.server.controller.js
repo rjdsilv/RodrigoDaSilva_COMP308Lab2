@@ -1,13 +1,23 @@
-﻿exports.render = (request, response) => {
-    const session = request.session;
+﻿const strUtils = require('../utils/string.server.utils');
+const customer = require('./customer.server.controller');
 
-    if (request.method === 'GET') {
-        // When it's a GET we render the feedback page getting the e-mail from the session.
-        const email = session.email ? session.email : '';
-        response.render('feedback', { email: email });
-    } else if (request.method === 'POST') {
-        // When it's a post, we redirect to the thankyou page, passing the filled first name.
-        session.firstName = request.body.firstName;
-        response.redirect('/thankyou');
+exports.render = (req, res, next) => {
+    const session = req.session;
+
+    if (req.method === 'POST') {
+        // Posting the comments. Save it to the database.
+        customer.addComments(req, res, next);
+    } else {
+        // The login was not done. Redirects to the login page.
+        if (!session.email) {
+            res.redirect('/');
+        }
+
+        // Loading the page with the data from the session.
+        res.render('feedback', {
+            email: strUtils.getSafe(session.email),
+            firstName: strUtils.getSafe(session.firstName),
+            lastName: strUtils.getSafe(session.lastName)
+        });
     }
 }

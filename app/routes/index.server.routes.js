@@ -4,7 +4,5 @@
 
     // Route the default route.
     app.get('/', index.render);
-    app.post('/', (request, response) => {
-        index.render(request, response);
-    });
+    app.post('/', index.render);
 }

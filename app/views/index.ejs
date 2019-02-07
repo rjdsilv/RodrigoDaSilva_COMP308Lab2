@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>COMP308-Lab1 :: Login</title>
+    <title>COMP308-Lab2 :: Login</title>
 
     <link rel="stylesheet"
           href="/app.css" />
@@ -21,9 +21,18 @@
           crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-4">
         <form method="post">
-            <div class="row mt-4">
+            <% if (error.length > 0) { %>
+            <div class="row mb-2">
+                <div class="col">&nbsp;</div>
+                <div class="col-6 alert alert-danger">
+                    <%= error %>
+                </div>
+                <div class="col">&nbsp;</div>
+            </div>
+            <% } %>
+            <div class="row">
                 <div class="col">&nbsp;</div>
                 <div class="col-10 col-md-8 col-lg-6 app-box">
                     <div class="form-row">
@@ -33,7 +42,7 @@
                     </div>
                     <div class="form-row">
                         <div class="col-12">
-                            <label for="email">User Name</label>
+                            <label for="email">Email</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">
@@ -44,7 +53,8 @@
                                        name="email"
                                        type="text"
                                        class="form-control"
-                                       placeholder="Enter your username" />
+                                       value="<%= email %>"
+                                       placeholder="Enter your email" />
                             </div>
                         </div>
                     </div>

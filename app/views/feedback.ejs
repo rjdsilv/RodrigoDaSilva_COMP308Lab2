@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>COMP308-Lab1 :: Feedback</title>
+    <title>COMP308-Lab2 :: Feedback</title>
 
     <link rel="stylesheet"
           href="/app.css" />
@@ -21,18 +21,18 @@
           crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-4">
         <form method="post">
-            <div class="row mt-4">
+            <div class="row">
                 <div class="col">&nbsp;</div>
-                <div class="col-10 app-box">
+                <div class="col-6 app-box">
                     <div class="form-row">
                         <div class="col-12 text-center app-box-title">
                             <h4>Feedback</h4>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-12 col-lg-6">
+                        <div class="col-12">
                             <label for="firstName">First Name</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -44,10 +44,11 @@
                                        name="firstName"
                                        type="text"
                                        class="form-control"
-                                       placeholder="Enter your first name" />
+                                       value="<%= firstName %>"
+                                       readonly />
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 mt-3 mt-lg-0">
+                        <div class="col-12 mt-3">
                             <label for="lastName">Last Name</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -59,10 +60,11 @@
                                        name="lastName"
                                        type="text"
                                        class="form-control"
-                                       placeholder="Enter your last name" />
+                                       value="<%= lastName %>"
+                                       readonly />
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 mt-3">
+                        <div class="col-12 mt-3">
                             <label for="email">Email</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -78,52 +80,6 @@
                                        readonly />
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 mt-3">
-                            <label for="motherTongue">Mother tongue</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-globe"></i>
-                                    </div>
-                                </div>
-                                <input id="motherTongue"
-                                       name="motherTongue"
-                                       type="text"
-                                       class="form-control"
-                                       placeholder="Enter your mother tongue" />
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6 mt-3">
-                            <label for="favoriteLang">Favorite programming language</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-desktop"></i>
-                                    </div>
-                                </div>
-                                <input id="favoriteLang"
-                                       name="favoriteLang"
-                                       type="text"
-                                       class="form-control"
-                                       placeholder="Enter your favorite programming language" />
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6 mt-3">
-                            <label for="favoriteFood">Favorite food</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-utensils"></i>
-                                    </div>
-                                </div>
-                                <input id="favoriteFood"
-                                       name="favoriteFood"
-                                       type="text"
-                                       class="form-control"
-                                       placeholder="Enter your favorite food" />
-                            </div>
-                        </div>
-
                         <div class="col-12 mt-3">
                             <label for="comments">Your comments:</label>
                             <textarea id="comments"
@@ -131,8 +87,7 @@
                                       maxlength="500"
                                       rows="5"
                                       cols="50"
-                                      class="form-control">
-                            </textarea>
+                                      class="form-control"></textarea>
                         </div>
                         <div class="col-12 mt-4 text-center">
                             <button type="submit" class="btn btn-primary pr-5 pl-5">Submit Feedback</button>
