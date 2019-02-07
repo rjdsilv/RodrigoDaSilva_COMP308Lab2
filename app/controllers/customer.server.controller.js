@@ -105,7 +105,7 @@ exports.addComments = (req, res, next) => {
 
     // The customer to be inserted / updated.
     const customer = {
-        comments: strUtils.getSafe(body.coments)
+        comments: strUtils.getSafe(body.comments)
     };
 
     // Indicates to insert the customer if it not exists.
@@ -119,10 +119,13 @@ exports.addComments = (req, res, next) => {
             // Propagates the error message to the next middleware.
             return next(err);
         } else {
+            const session = req.session;
+
             // Prints a success message!
             console.log("Comments for " + body.email + " successfully saved to the database.");
 
-            // Redirects to the login page.
+            // Saves the comments in the session and redirects to the login page.
+            session.comments = strUtils.getSafe(body.comments);
             res.redirect('/thankyou');
         }
     });
