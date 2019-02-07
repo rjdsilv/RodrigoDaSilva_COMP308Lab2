@@ -41,6 +41,9 @@
     <Compile Include="app\controllers\index.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\controllers\view-feedback.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\models\customer.server.model.js">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +57,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\thankyou.server.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\routes\view-feedback.server.routes.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\utils\string.server.utils.js">
@@ -85,6 +91,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="app\views\thankyou.ejs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\views\view-feedback.ejs">
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />

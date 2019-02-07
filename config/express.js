@@ -39,6 +39,7 @@ module.exports = () => {
     require('../app/routes/signup.server.routes')(app);
     require('../app/routes/feedback.server.routes')(app);
     require('../app/routes/thankyou.server.routes')(app);
+    require('../app/routes/view-feedback.server.routes')(app);
 
     // Configure static file serving.
     app.use(express.static('./public'));

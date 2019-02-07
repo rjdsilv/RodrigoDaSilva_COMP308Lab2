@@ -61,7 +61,7 @@ exports.login = (req, res, next) => {
     const query = {
         'email': strUtils.getSafe(body.email),
         'password': strUtils.getSafe(body.password)
-    }
+    };
 
     // Performs the find on the database.
     Customer.findOne(query, (err, customer) => {
@@ -130,3 +130,36 @@ exports.addComments = (req, res, next) => {
         }
     });
 };
+
+exports.findFeedback = (req, res, next) => {
+    const body = req.body;
+
+    // The query to be executed.
+    const query = {
+        'email': strUtils.getSafe(body.email)
+    };
+
+    // Performs the find on the database.
+    Customer.findOne(query, (err, customer) => {
+        if (err) {
+            return next(err);
+        } else {
+            if (customer) {
+                // Customer found. Renders the feedback.
+                res.render('view-feedback', {
+                    error: '',
+                    email: strUtils.getSafe(customer.email),
+                    comments: strUtils.getSafe(customer.comments)
+                });
+            } else {
+                const error = `Customer ${body.email} does not found in the system!`;
+                // Customer not found. Shows the proper error to the user.
+                res.render('view-feedback', {
+                    error: error,
+                    email: '',
+                    comments: '',
+                });
+            }
+        }
+    });
+}
