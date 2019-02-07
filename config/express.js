@@ -9,7 +9,6 @@ const session = require('express-session');
 // Configure Express.
 module.exports = () => {
     const app = express();
-
     if (process.env.NODE_ENV === 'development') {
         app.use(morgan('dev'));
     } else if (process.env.NODE_ENV === 'production') {
@@ -36,11 +35,10 @@ module.exports = () => {
     app.engine('html', require('ejs').renderFile);
 
     // Configuring routes.
-    const setRoutes = require('../app/routes/index.server.routes');
-    setRoutes(app);
+    require('../app/routes/index.server.routes')(app);
+    require('../app/routes/signup.server.routes')(app);
 
     // Configure static file serving.
     app.use(express.static('./public'));
-
     return app;
 };

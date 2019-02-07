@@ -30,12 +30,30 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\controllers\customer.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\controllers\feedback.server.controller.js" />
+    <Compile Include="app\controllers\signup.server.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\controllers\thankyou.server.controller.js" />
     <Compile Include="app\controllers\index.server.controller.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\models\customer.server.model.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\routes\index.server.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\routes\signup.server.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\utils\string.server.utils.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\views\signup.ejs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="config\config.js">
@@ -48,6 +66,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="config\express.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\mongoose.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />
@@ -70,6 +91,7 @@
     <Folder Include="app\" />
     <Folder Include="app\controllers\" />
     <Folder Include="app\models\" />
+    <Folder Include="app\utils\" />
     <Folder Include="app\routes\" />
     <Folder Include="app\views\" />
     <Folder Include="config\" />
