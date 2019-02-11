@@ -14,7 +14,7 @@ const CustomerSchema = new mongoose.Schema({
     comments: String,
     created: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     }
 });
 

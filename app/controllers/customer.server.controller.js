@@ -24,7 +24,8 @@ exports.create = (req, res, next) => {
         email: strUtils.getSafe(body.email),
         firstName: strUtils.getSafe(body.firstName),
         lastName: strUtils.getSafe(body.lastName),
-        password: strUtils.getSafe(body.password)
+        password: strUtils.getSafe(body.password),
+        created: Date.now()
     };
 
     // Indicates to insert the customer if it not exists.

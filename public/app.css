@@ -28,6 +28,7 @@
 .nav-item {
     padding-left: 10px;
     padding-right: 10px;
+    margin-right: 5px;
 }
 
 .nav-item.active,
