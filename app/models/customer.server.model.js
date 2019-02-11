@@ -12,6 +12,8 @@ const CustomerSchema = new mongoose.Schema({
     lastName: String,
     password: String,
     comments: String,
+    motherTongue: String,
+    favoriteLang: String,
     created: {
         type: Date,
         default: Date.now()

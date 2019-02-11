@@ -12,11 +12,13 @@ exports.render = (req, res, next) => {
         } else {
             // Missing fields. Re-render the page passing an error message.
             res.render('signup', {
-                error: 'Please, provide data for all the fields!',
+                error: 'Please, provide data for at least first name, last name, email, and password!',
                 email: strUtils.getSafe(body.email),
                 firstName: strUtils.getSafe(body.firstName),
                 lastName: strUtils.getSafe(body.lastName),
-                password: strUtils.getSafe(body.password)
+                password: strUtils.getSafe(body.password),
+                motherTongue: strUtils.getSafe(body.motherTongue),
+                favoriteLang: strUtils.getSafe(body.favoriteLang)
             });
         }
     } else {
@@ -25,7 +27,9 @@ exports.render = (req, res, next) => {
             email: '',
             firstName: '',
             lastName: '',
-            password: ''
+            password: '',
+            motherTongue: '',
+            favoriteLang: ''
         });
     }
 };

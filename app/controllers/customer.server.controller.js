@@ -25,6 +25,8 @@ exports.create = (req, res, next) => {
         firstName: strUtils.getSafe(body.firstName),
         lastName: strUtils.getSafe(body.lastName),
         password: strUtils.getSafe(body.password),
+        motherTongue: strUtils.getSafe(body.motherTongue),
+        favoriteLang: strUtils.getSafe(body.favoriteLang),
         created: Date.now()
     };
 
