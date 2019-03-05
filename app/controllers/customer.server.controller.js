@@ -78,6 +78,8 @@ exports.login = (req, res, next) => {
                 session.email = strUtils.getSafe(customer.email);
                 session.firstName = strUtils.getSafe(customer.firstName);
                 session.lastName = strUtils.getSafe(customer.lastName);
+                session.motherTongue = strUtils.getSafe(customer.motherTongue);
+                session.favoriteLang = strUtils.getSafe(customer.favoriteLang);
                 session.isAdmin = customer.isAdmin;
 
                 // Redirects to the feedback page.

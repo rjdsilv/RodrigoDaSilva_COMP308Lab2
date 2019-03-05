@@ -49,14 +49,14 @@
         <form method="post">
             <div class="row">
                 <div class="col">&nbsp;</div>
-                <div class="col-6 app-box">
+                <div class="col-8 app-box">
                     <div class="form-row">
                         <div class="col-12 text-center app-box-title">
                             <h4>Feedback</h4>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-12">
+                        <div class="col-6">
                             <label for="firstName">First Name</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -72,7 +72,7 @@
                                        readonly />
                             </div>
                         </div>
-                        <div class="col-12 mt-3">
+                        <div class="col-6">
                             <label for="lastName">Last Name</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -101,6 +101,38 @@
                                        type="text"
                                        class="form-control"
                                        value="<%= email %>"
+                                       readonly />
+                            </div>
+                        </div>
+                        <div class="col-6 mt-3">
+                            <label for="motherTongue">Mother tongue</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
+                                </div>
+                                <input id="motherTongue"
+                                       name="motherTongue"
+                                       type="text"
+                                       class="form-control"
+                                       value="<%= motherTongue %>"
+                                       readonly />
+                            </div>
+                        </div>
+                        <div class="col-6 mt-3">
+                            <label for="favoriteLang">Favorite programming language</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                </div>
+                                <input id="favoriteLang"
+                                       name="favoriteLang"
+                                       type="text"
+                                       class="form-control"
+                                       value="<%= favoriteLang %>"
                                        readonly />
                             </div>
                         </div>

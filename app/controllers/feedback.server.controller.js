@@ -18,6 +18,8 @@ exports.render = (req, res, next) => {
             email: strUtils.getSafe(session.email),
             firstName: strUtils.getSafe(session.firstName),
             lastName: strUtils.getSafe(session.lastName),
+            motherTongue: strUtils.getSafe(session.motherTongue),
+            favoriteLang: strUtils.getSafe(session.favoriteLang),
             isAdmin: session.isAdmin
         });
     }
