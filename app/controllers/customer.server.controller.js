@@ -27,6 +27,7 @@ exports.create = (req, res, next) => {
         password: strUtils.getSafe(body.password),
         motherTongue: strUtils.getSafe(body.motherTongue),
         favoriteLang: strUtils.getSafe(body.favoriteLang),
+        isAdmin: false,
         created: Date.now()
     };
 
@@ -77,6 +78,7 @@ exports.login = (req, res, next) => {
                 session.email = strUtils.getSafe(customer.email);
                 session.firstName = strUtils.getSafe(customer.firstName);
                 session.lastName = strUtils.getSafe(customer.lastName);
+                session.isAdmin = customer.isAdmin;
 
                 // Redirects to the feedback page.
                 res.redirect('/feedback');
@@ -144,6 +146,7 @@ exports.findFeedback = (req, res, next) => {
 
     // Performs the find on the database.
     Customer.findOne(query, (err, customer) => {
+        const session = req.session;
         if (err) {
             return next(err);
         } else {
@@ -152,7 +155,8 @@ exports.findFeedback = (req, res, next) => {
                 res.render('view-feedback', {
                     error: '',
                     email: strUtils.getSafe(customer.email),
-                    comments: strUtils.getSafe(customer.comments)
+                    comments: strUtils.getSafe(customer.comments),
+                    isAdmin: session.isAdmin
                 });
             } else {
                 const error = `Customer ${body.email} does not found in the system!`;
@@ -161,6 +165,7 @@ exports.findFeedback = (req, res, next) => {
                     error: error,
                     email: '',
                     comments: '',
+                    isAdmin: false
                 });
             }
         }

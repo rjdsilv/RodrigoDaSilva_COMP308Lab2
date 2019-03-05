@@ -17,7 +17,8 @@ exports.render = (req, res, next) => {
         res.render('feedback', {
             email: strUtils.getSafe(session.email),
             firstName: strUtils.getSafe(session.firstName),
-            lastName: strUtils.getSafe(session.lastName)
+            lastName: strUtils.getSafe(session.lastName),
+            isAdmin: session.isAdmin
         });
     }
 }

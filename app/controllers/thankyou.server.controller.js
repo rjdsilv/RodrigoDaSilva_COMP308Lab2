@@ -12,6 +12,7 @@ exports.render = (req, res) => {
     const name = strUtils.getSafe(session.firstName) + ' ' + strUtils.getSafe(session.lastName);
     res.render('thankyou', {
         name: name,
-        comments: strUtils.getSafe(session.comments)
+        comments: strUtils.getSafe(session.comments),
+        isAdmin: req.session.isAdmin
     });
 }

@@ -14,6 +14,7 @@ const CustomerSchema = new mongoose.Schema({
     comments: String,
     motherTongue: String,
     favoriteLang: String,
+    isAdmin: Boolean,
     created: {
         type: Date,
         default: Date.now()
